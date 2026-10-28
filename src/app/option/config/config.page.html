@@ -1,0 +1,205 @@
+
+<!-- MENÚ LATERAL -->
+<ion-menu contentId="main-content" type="overlay">
+  <ion-header>
+    <ion-toolbar class="menu-header">
+      <div class="menu-logo">
+        <div class="menu-logo-circle">
+          <ion-icon name="restaurant-outline"></ion-icon>
+        </div>
+        <div>
+          <h2>AKDAV</h2>
+          <p>Tu comida favorita</p>
+        </div>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="menu-content">
+    <ion-list lines="none">
+      <ion-menu-toggle>
+        <ion-item button routerLink="/home" class="menu-item">
+          <ion-icon name="home-outline" slot="start"></ion-icon>
+          <ion-label>Inicio</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle>
+        <ion-item button class="menu-item">
+          <ion-icon name="restaurant-outline" slot="start"></ion-icon>
+          <ion-label>Menú</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle>
+        <ion-item button class="menu-item">
+          <ion-icon name="cart-outline" slot="start"></ion-icon>
+          <ion-label>Mi carrito</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle>
+        <ion-item button class="menu-item">
+          <ion-icon name="receipt-outline" slot="start"></ion-icon>
+          <ion-label>Mis pedidos</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <div class="menu-separator"></div>
+
+      <ion-menu-toggle>
+        <ion-item button class="menu-item">
+          <ion-icon name="person-outline" slot="start"></ion-icon>
+          <ion-label>Mi perfil</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle>
+        <ion-item button class="menu-item active">
+          <ion-icon name="settings-outline" slot="start"></ion-icon>
+          <ion-label>Configuración</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+
+    <div class="logout-container">
+      <ion-item button class="menu-item logout" lines="none"
+                (click)="cerrarSesion()">
+        <ion-icon name="log-out-outline" slot="start"></ion-icon>
+        <ion-label>Cerrar sesión</ion-label>
+      </ion-item>
+    </div>
+  </ion-content>
+</ion-menu>
+
+<!-- PÁGINA PRINCIPAL -->
+<div class="ion-page" id="main-content">
+
+  <ion-header>
+    <ion-toolbar class="main-toolbar">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+
+      <ion-title>Configuración</ion-title>
+
+      <ion-buttons slot="end">
+        <ion-button aria-label="Mi carrito" (click)="mostrarInformacion('Carrito', 'La sección de carrito estará disponible cuando la implementemos.')">
+          <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true" class="config-content"
+               [class.texto-ampliado]="textoAmpliado">
+
+    <div class="config-container">
+
+      <!-- NOTIFICACIONES -->
+      <section class="settings-card">
+        <h2>Notificaciones</h2>
+
+        <div class="setting-row">
+          <div class="setting-description">
+            <h3>Estado de mi pedido</h3>
+            <p>Preparación, salida y entrega</p>
+          </div>
+
+          <ion-toggle
+            aria-label="Notificaciones del estado de mi pedido"
+            [(ngModel)]="notificarPedidos"
+            color="primary">
+          </ion-toggle>
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-description">
+            <h3>Avisos de disponibilidad</h3>
+            <p>Cambios del menú escolar</p>
+          </div>
+
+          <ion-toggle
+            aria-label="Avisos de disponibilidad"
+            [(ngModel)]="notificarDisponibilidad"
+            color="primary">
+          </ion-toggle>
+        </div>
+      </section>
+
+      <!-- PREFERENCIAS -->
+      <section class="settings-card">
+        <h2>Preferencias</h2>
+
+        <div class="setting-row language-row">
+          <div class="setting-description">
+            <h3>Idioma</h3>
+          </div>
+
+          <span class="setting-value">Español</span>
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-description">
+            <h3>Texto ampliado</h3>
+            <p>Mejora la lectura en el menú</p>
+          </div>
+
+          <ion-toggle
+            aria-label="Activar texto ampliado"
+            [(ngModel)]="textoAmpliado"
+            color="primary">
+          </ion-toggle>
+        </div>
+      </section>
+
+      <!-- AVISO DE PAGO -->
+      <section class="payment-notice">
+        <ion-icon name="information-circle-outline"></ion-icon>
+
+        <p>
+          Método del servicio: <strong>SOLO EFECTIVO</strong> al recibir.
+          No hay otros métodos de pago.
+        </p>
+      </section>
+
+      <!-- AYUDA E INFORMACIÓN -->
+      <section class="settings-card info-card">
+
+        <button class="info-row" type="button"
+          (click)="mostrarInformacion('Ayuda con un pedido',
+          'Para solicitar ayuda con un pedido, contacta al personal del kiosko escolar. Más adelante podremos integrar un sistema de soporte.')">
+          <span>Ayuda con un pedido</span>
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </button>
+
+        <button class="info-row" type="button"
+          (click)="mostrarInformacion('Aviso de privacidad',
+          'AKDAV deberá informar cómo se recopilan, utilizan y protegen los datos personales. Este apartado se completará con el aviso de privacidad oficial del proyecto.')">
+          <span>Aviso de privacidad</span>
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </button>
+
+        <button class="info-row" type="button"
+          (click)="mostrarInformacion('Acerca de AKDAV',
+          'AKDAV significa App de Kiosko, Desayunos y Alimentos Varios. Es una aplicación pensada para facilitar los pedidos de comida dentro de un entorno escolar.')">
+          <span>Acerca de AKDAV</span>
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </button>
+
+      </section>
+
+      <!-- CERRAR SESIÓN -->
+      <ion-button expand="block" fill="outline"
+        class="close-session-button"
+        (click)="cerrarSesion()">
+        Cerrar sesión
+      </ion-button>
+
+      <footer class="config-footer">
+        AKDAV · Maquetado estático · Desarrollo por validar
+      </footer>
+
+    </div>
+  </ion-content>
+</div>

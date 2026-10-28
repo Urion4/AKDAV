@@ -1,0 +1,342 @@
+
+/* =========================================
+   COLORES Y BARRA SUPERIOR
+========================================= */
+
+.config-content {
+  --background: #FFF9E9;
+  --color: #4B2B26;
+}
+
+.main-toolbar {
+  --background: #FFF9E9;
+  --color: #4B2B26;
+  --min-height: 76px;
+  box-shadow: none;
+}
+
+.main-toolbar ion-menu-button,
+.main-toolbar ion-button {
+  --color: #D66B6B;
+}
+
+ion-title {
+  font-size: 23px;
+  font-weight: 750;
+}
+
+/* =========================================
+   MENÚ LATERAL
+========================================= */
+
+.menu-header {
+  --background: #E83F46;
+  --color: #FFFFFF;
+  height: 120px;
+}
+
+.menu-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+}
+
+.menu-logo-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  background: #FFFFFF;
+  border-radius: 50%;
+}
+
+.menu-logo-circle ion-icon {
+  color: #E83F46;
+  font-size: 30px;
+}
+
+.menu-logo h2 {
+  margin: 0;
+  color: #FFFFFF;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.menu-logo p {
+  margin: 3px 0 0;
+  color: #FFE7E7;
+  font-size: 12px;
+}
+
+.menu-content {
+  --background: #FFFFFF;
+}
+
+.menu-item {
+  --background: transparent;
+  --color: #4B2B26;
+  --padding-start: 20px;
+  --inner-padding-end: 15px;
+  min-height: 52px;
+  margin: 4px 10px;
+  border-radius: 12px;
+}
+
+.menu-item ion-icon {
+  color: #E83F46;
+  font-size: 22px;
+}
+
+.menu-item.active {
+  --background: #FFF0F0;
+  --color: #E83F46;
+}
+
+.menu-separator {
+  height: 1px;
+  margin: 15px 20px;
+  background: #F0E3DF;
+}
+
+.logout-container {
+  margin-top: 20px;
+}
+
+.menu-item.logout {
+  --color: #B9232D;
+}
+
+/* =========================================
+   CONTENEDOR
+========================================= */
+
+.config-container {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 22px 20px 28px;
+}
+
+/* =========================================
+   TARJETAS
+========================================= */
+
+.settings-card {
+  background: #FFFFFF;
+  border: 1px solid #EDE4D6;
+  border-radius: 27px;
+  padding: 24px 25px;
+  margin-bottom: 26px;
+  box-shadow: 0 1px 2px rgba(75, 43, 38, 0.03);
+}
+
+.settings-card h2 {
+  margin: 0 0 18px;
+  color: #4B2B26;
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 750;
+}
+
+/* =========================================
+   FILAS DE CONFIGURACIÓN
+========================================= */
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 78px;
+  padding: 8px 0;
+}
+
+.setting-description {
+  flex: 1;
+  min-width: 0;
+}
+
+.setting-description h3 {
+  margin: 0;
+  color: #554640;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.setting-description p {
+  margin: 7px 0 0;
+  color: #95877C;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.setting-row ion-toggle {
+  flex-shrink: 0;
+  --track-background: #EEE3D2;
+  --track-background-checked: #E83F46;
+  --handle-background: #FFFFFF;
+  --handle-background-checked: #FFFFFF;
+}
+
+.setting-value {
+  color: #8A7A70;
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.language-row {
+  min-height: 48px;
+}
+
+/* =========================================
+   AVISO DE MÉTODO DE PAGO
+========================================= */
+
+.payment-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px;
+  margin: 8px 0 30px;
+  background: #FFF0D5;
+  border-radius: 23px;
+}
+
+.payment-notice ion-icon {
+  flex-shrink: 0;
+  color: #B95C5C;
+  font-size: 25px;
+  margin-top: 2px;
+}
+
+.payment-notice p {
+  margin: 0;
+  color: #6A5144;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   AYUDA, PRIVACIDAD Y ACERCA DE
+========================================= */
+
+.info-card {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 70px;
+  padding: 12px 0;
+  border: 0;
+  background: transparent;
+  color: #65534B;
+  text-align: left;
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.info-row ion-icon {
+  flex-shrink: 0;
+  color: #D66B6B;
+  font-size: 21px;
+}
+
+.info-row:active {
+  opacity: 0.65;
+}
+
+/* =========================================
+   CERRAR SESIÓN
+========================================= */
+
+.close-session-button {
+  --background: #FFFFFF;
+  --background-hover: #FFF0F0;
+  --background-activated: #FBE5E3;
+  --color: #B23B46;
+  --border-color: #EDE4D6;
+  --border-width: 1px;
+  --border-style: solid;
+  --border-radius: 40px;
+
+  height: 58px;
+  margin: 4px 0 25px;
+  font-size: 17px;
+  font-weight: 700;
+  text-transform: none;
+}
+
+/* =========================================
+   PIE DE PÁGINA
+========================================= */
+
+.config-footer {
+  padding: 8px 0;
+  color: #9A8A7B;
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* =========================================
+   TEXTO AMPLIADO
+========================================= */
+
+.texto-ampliado {
+  .setting-description h3,
+  .setting-value,
+  .info-row,
+  .payment-notice p {
+    font-size: 19px;
+  }
+
+  .setting-description p {
+    font-size: 16px;
+  }
+
+  .settings-card h2 {
+    font-size: 25px;
+  }
+}
+
+/* =========================================
+   PANTALLAS PEQUEÑAS
+========================================= */
+
+@media (max-width: 380px) {
+  .config-container {
+    padding: 18px 13px 24px;
+  }
+
+  .settings-card {
+    padding: 20px 17px;
+    border-radius: 22px;
+  }
+
+  .settings-card h2 {
+    font-size: 20px;
+  }
+
+  .setting-description h3 {
+    font-size: 15px;
+  }
+
+  .setting-description p {
+    font-size: 12px;
+  }
+
+  ion-title {
+    font-size: 20px;
+  }
+}

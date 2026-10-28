@@ -1,0 +1,19 @@
+// For information on how to create your own theme, please refer to:
+// https://ionicframework.com/docs/theming/
+:root {
+  /** Colores principales de AKDAV **/
+  --ion-color-primary: #E83F46;
+  --ion-color-primary-rgb: 232, 63, 70;
+  --ion-color-primary-contrast: #FFFFFF;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #CC373E;
+  --ion-color-primary-tint: #EA5259;
+
+  /** Colores secundarios **/
+  --ion-color-secondary: #8CBF45;
+  --ion-color-tertiary: #F4C84A;
+
+  /** Fondo y texto **/
+  --ion-background-color: #FFF9E9;
+  --ion-text-color: #4B2B26;
+}

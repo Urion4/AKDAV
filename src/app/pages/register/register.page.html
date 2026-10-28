@@ -1,0 +1,78 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title font-family="Arial, sans-serif" class="ion-text-center">Crea tu cuenta</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">register</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="form-container">
+    
+    <h2 class="ion-margin-bottom">Regístrate para empezar</h2>
+
+    <ion-list lines="none">
+      <!-- Campo: Nombre -->
+      <ion-item class="ion-margin-bottom" lines="none">
+        <ion-icon name="person-circle-outline"
+          slot="start"
+          color="primary">
+        </ion-icon>
+        <ion-input 
+          label="Nombre completo" 
+          label-placement="floating" 
+          type="text" 
+          placeholder="Ej. Juan Alberto Pérez">
+        </ion-input>
+      </ion-item>
+
+      <!-- Campo: Correo Electrónico -->
+      <ion-item class="ion-margin-bottom">
+        <ion-icon name="mail-outline"
+          slot="start"
+          color="primary">
+        </ion-icon>
+        <ion-input 
+          label="Correo electrónico" 
+          label-placement="floating" 
+          type="email" 
+          placeholder="nombre@correo.com">
+        </ion-input>
+      </ion-item>
+
+      <!-- Campo: Contraseña -->
+      <ion-item class="ion-margin-bottom">
+        <ion-icon name="lock-closed-outline"
+          slot="start"
+          color="primary">
+        </ion-icon>
+        <ion-input 
+          label="Contraseña" 
+          label-placement="floating" 
+          type="password" 
+          placeholder="Mínimo 6 caracteres">
+        </ion-input>
+      </ion-item>
+    </ion-list>
+
+    <!-- Botón de Registro -->
+    <ion-button expand="block" class="ion-margin-top" type="submit">
+      Registrarse
+    </ion-button>
+
+    <!-- Enlace a Login -->
+    <p class="ion-text-center ion-margin-top">
+      ¿Ya tienes cuenta?
+      <ion-button fill="clear" (click)="irLogin()">
+    Inicia sesión
+  </ion-button>
+    </p>
+
+  </div>
+</ion-content>

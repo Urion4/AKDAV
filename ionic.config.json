@@ -1,0 +1,7 @@
+{
+  "name": "AKDAV",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

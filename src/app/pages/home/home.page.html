@@ -1,0 +1,511 @@
+
+<!-- MENÚ LATERAL -->
+<ion-menu contentId="main-content" type="overlay">
+
+  <!-- CABECERA DEL MENÚ -->
+  <ion-header>
+    <ion-toolbar class="menu-header">
+
+      <div class="menu-logo">
+        <div class="menu-logo-circle">
+          <ion-icon name="restaurant-outline"></ion-icon>
+        </div>
+
+        <div>
+          <h2>AKDAV</h2>
+          <p>Tu comida favorita</p>
+        </div>
+      </div>
+
+    </ion-toolbar>
+  </ion-header>
+
+
+  <!-- OPCIONES -->
+  <ion-content class="menu-content">
+
+    <ion-list lines="none">
+
+      <!-- INICIO -->
+      <ion-menu-toggle>
+        <ion-item
+          button
+          routerLink="/home"
+          class="menu-item active">
+
+          <ion-icon
+            name="home-outline"
+            slot="start">
+          </ion-icon>
+
+          <ion-label>
+            Inicio
+          </ion-label>
+
+        </ion-item>
+      </ion-menu-toggle>
+
+
+      <!-- MENÚ -->
+      <ion-menu-toggle>
+        <ion-item
+          button
+          class="menu-item">
+
+          <ion-icon
+            name="restaurant-outline"
+            slot="start">
+          </ion-icon>
+
+          <ion-label>
+            Menú
+          </ion-label>
+
+        </ion-item>
+      </ion-menu-toggle>
+
+
+      <!-- CARRITO -->
+      <ion-menu-toggle>
+        <ion-item
+          button
+          class="menu-item">
+
+          <ion-icon
+            name="cart-outline"
+            slot="start">
+          </ion-icon>
+
+          <ion-label>
+            Mi carrito
+          </ion-label>
+
+        </ion-item>
+      </ion-menu-toggle>
+
+
+      <!-- PEDIDOS -->
+      <ion-menu-toggle>
+        <ion-item
+          button
+          class="menu-item">
+
+          <ion-icon
+            name="receipt-outline"
+            slot="start">
+          </ion-icon>
+
+          <ion-label>
+            Mis pedidos
+          </ion-label>
+
+        </ion-item>
+      </ion-menu-toggle>
+
+
+      <!-- SEPARADOR -->
+      <div class="menu-separator"></div>
+
+
+      <!-- PERFIL -->
+      <ion-menu-toggle>
+        <ion-item
+          button
+          class="menu-item">
+
+          <ion-icon
+            name="person-outline"
+            slot="start">
+          </ion-icon>
+
+          <ion-label>
+            Mi perfil
+          </ion-label>
+
+        </ion-item>
+      </ion-menu-toggle>
+
+
+      <!-- CONFIGURACIÓN -->
+      <ion-menu-toggle>
+        <ion-item
+          button
+          (click)="configuracion()"
+          class="menu-item">
+
+          <ion-icon
+            name="settings-outline"
+            slot="start">
+          </ion-icon>
+
+          <ion-label>
+            Configuración
+          </ion-label>
+
+        </ion-item>
+      </ion-menu-toggle>
+
+    </ion-list>
+
+
+    <!-- CERRAR SESIÓN -->
+    <div class="logout-container">
+
+      <ion-menu-toggle>
+
+        <ion-item
+          button
+          class="menu-item logout">
+
+          <ion-icon
+            name="log-out-outline"
+            slot="start">
+          </ion-icon>
+
+          <ion-label (click)="cerrarSesion()">
+            Cerrar sesión
+          </ion-label>
+
+        </ion-item>
+
+      </ion-menu-toggle>
+
+    </div>
+
+  </ion-content>
+
+</ion-menu>
+
+
+<!-- CONTENIDO PRINCIPAL -->
+<div class="ion-page" id="main-content">
+
+  <!-- BARRA SUPERIOR -->
+  <ion-header>
+
+    <ion-toolbar class="main-toolbar">
+
+      <!-- BOTÓN MENÚ -->
+      <ion-buttons slot="start">
+
+        <ion-menu-button></ion-menu-button>
+
+      </ion-buttons>
+
+
+      <!-- TÍTULO -->
+      <ion-title>
+        AKDAV
+      </ion-title>
+
+
+      <!-- CARRITO -->
+      <ion-buttons slot="end">
+
+        <ion-button>
+          <ion-icon
+            slot="icon-only"
+            name="cart-outline">
+          </ion-icon>
+        </ion-button>
+
+      </ion-buttons>
+
+    </ion-toolbar>
+
+  </ion-header>
+
+
+  <!-- CONTENIDO -->
+  <ion-content [fullscreen]="true" class="home-content">
+
+    <div class="home-container">
+
+
+      <!-- SALUDO -->
+      <section class="welcome-section">
+
+        <p class="welcome-small">
+          ¡Hola! 👋
+        </p>
+
+        <h1>
+          ¿Qué se te antoja hoy?
+        </h1>
+
+        <p class="welcome-description">
+          Encuentra algo delicioso para disfrutar.
+        </p>
+
+      </section>
+
+
+      <!-- BUSCADOR -->
+      <div class="search-container">
+
+        <ion-searchbar
+          placeholder="Buscar alimentos..."
+          animated="true">
+        </ion-searchbar>
+
+      </div>
+
+
+      <!-- CATEGORÍAS -->
+      <section class="categories-section">
+
+        <h2>
+          Categorías
+        </h2>
+
+        <div class="categories">
+
+          <div class="category-card">
+
+            <div class="category-icon">
+              🍳
+            </div>
+
+            <span>
+              Desayunos
+            </span>
+
+          </div>
+
+
+          <div class="category-card">
+
+            <div class="category-icon">
+              🍔
+            </div>
+
+            <span>
+              Comida
+            </span>
+
+          </div>
+
+
+          <div class="category-card">
+
+            <div class="category-icon">
+              🥤
+            </div>
+
+            <span>
+              Bebidas
+            </span>
+
+          </div>
+
+
+          <div class="category-card">
+
+            <div class="category-icon">
+              🍰
+            </div>
+
+            <span>
+              Snacks
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- PRODUCTOS POPULARES -->
+      <section class="products-section">
+
+        <div class="section-title">
+
+          <h2>
+            Populares
+          </h2>
+
+          <button>
+            Ver todos
+          </button>
+
+        </div>
+
+
+        <!-- PRODUCTO 1 -->
+        <div class="products-grid">
+
+          <ion-card class="food-card">
+
+            <div class="food-image">
+              🍔
+            </div>
+
+            <ion-card-content>
+
+              <h3>
+                Hamburguesa clásica
+              </h3>
+
+              <p>
+                Carne, queso, lechuga y tomate.
+              </p>
+
+              <div class="food-bottom">
+
+                <strong>
+                  $45.00
+                </strong>
+
+                <ion-button
+                  size="small"
+                  class="add-button">
+
+                  <ion-icon
+                    slot="icon-only"
+                    name="add-outline">
+                  </ion-icon>
+
+                </ion-button>
+
+              </div>
+
+            </ion-card-content>
+
+          </ion-card>
+
+
+          <!-- PRODUCTO 2 -->
+
+          <ion-card class="food-card">
+
+            <div class="food-image">
+              🌮
+            </div>
+
+            <ion-card-content>
+
+              <h3>
+                Tacos
+              </h3>
+
+              <p>
+                Tacos preparados al momento.
+              </p>
+
+              <div class="food-bottom">
+
+                <strong>
+                  $35.00
+                </strong>
+
+                <ion-button
+                  size="small"
+                  class="add-button">
+
+                  <ion-icon
+                    slot="icon-only"
+                    name="add-outline">
+                  </ion-icon>
+
+                </ion-button>
+
+              </div>
+
+            </ion-card-content>
+
+          </ion-card>
+
+
+          <!-- PRODUCTO 3 -->
+
+          <ion-card class="food-card">
+
+            <div class="food-image">
+              🥪
+            </div>
+
+            <ion-card-content>
+
+              <h3>
+                Sándwich
+              </h3>
+
+              <p>
+                Jamón, queso y vegetales.
+              </p>
+
+              <div class="food-bottom">
+
+                <strong>
+                  $30.00
+                </strong>
+
+                <ion-button
+                  size="small"
+                  class="add-button">
+
+                  <ion-icon
+                    slot="icon-only"
+                    name="add-outline">
+                  </ion-icon>
+
+                </ion-button>
+
+              </div>
+
+            </ion-card-content>
+
+          </ion-card>
+
+
+          <!-- PRODUCTO 4 -->
+
+          <ion-card class="food-card">
+
+            <div class="food-image">
+              🥤
+            </div>
+
+            <ion-card-content>
+
+              <h3>
+                Jugo natural
+              </h3>
+
+              <p>
+                Jugo fresco del día.
+              </p>
+
+              <div class="food-bottom">
+
+                <strong>
+                  $20.00
+                </strong>
+
+                <ion-button
+                  size="small"
+                  class="add-button">
+
+                  <ion-icon
+                    slot="icon-only"
+                    name="add-outline">
+                  </ion-icon>
+
+                </ion-button>
+
+              </div>
+
+            </ion-card-content>
+
+          </ion-card>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </ion-content>
+
+</div>
