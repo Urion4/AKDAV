@@ -1,0 +1,18 @@
+@"
+NOMBRE: Valeria Michell Martínez Hernández
+
+APORTACIÓN AL PROYECTO:
+
+Mi participación en el proyecto consiste en
+colaborar en el desarrollo de la aplicación,
+apoyar en la organización de los archivos y
+contribuir en la documentación del sistema.
+
+Asimismo, participaré en la identificación
+de errores y en la mejora de las funcionalidades
+para lograr un funcionamiento adecuado.
+
+Utilicé GitHub para trabajar de manera
+colaborativa mediante la creación de una rama
+independiente.
+"@ | Set-Content -Path tareas-valeria.txt -Encoding UTF8
