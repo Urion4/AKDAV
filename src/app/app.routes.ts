@@ -29,5 +29,9 @@ export const routes: Routes = [
   {
     path: 'mis-pedidos',
     loadComponent: () => import('./option/mis-pedidos/mis-pedidos.page').then( m => m.MisPedidosPage)
+  },  {
+    path: 'carrito',
+    loadComponent: () => import('./pages/carrito/carrito.page').then( m => m.CarritoPage)
   },
+
 ];
