@@ -1,6 +1,5 @@
 
 import { Component } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
 import { addIcons } from 'ionicons';
 import {
   arrowBackOutline,
@@ -12,15 +11,16 @@ import {
   flagOutline,
   informationCircleOutline
 } from 'ionicons/icons';
+import { IonButton, IonCard, IonCardContent, IonCol, IonContent, IonIcon, } from '@ionic/angular';
 
 @Component({
   selector: 'app-seguimiento',
-  templateUrl: './seguimiento.page.html',
-  styleUrls: ['./seguimiento.page.scss'],
+  templateUrl: './seguir.page.html',
+  styleUrls: ['./seguir.page.scss'],
   standalone: true,
-  imports: [IonicModule]
+  imports: [IonIcon,IonCard,IonCardContent,IonButton,IonContent]
 })
-export class SeguimientoPage {
+export class SeguirPage {
 
   constructor() {
     addIcons({
