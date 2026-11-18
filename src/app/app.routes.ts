@@ -33,5 +33,9 @@ export const routes: Routes = [
     path: 'perfil',
     loadComponent: () => import('./pages/perfil/perfil.page').then( m => m.PerfilPage)
   },
+  {
+    path: 'detalles',
+    loadComponent: () => import('./pages/detalles/detalles.page').then( m => m.DetallesPage)
+  },
 
 ];

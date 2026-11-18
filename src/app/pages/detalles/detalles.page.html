@@ -1,0 +1,120 @@
+
+
+<ion-content [fullscreen]="true">
+
+  <div class="pagina">
+
+    <!-- ENCABEZADO -->
+    <div class="encabezado">
+      <div class="regresar" (click)="volver()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+        <span>Detalles</span>
+      </div>
+
+      <ion-icon
+        name="cart-outline"
+        class="icono-carrito">
+      </ion-icon>
+    </div>
+
+    <!-- IMAGEN PRINCIPAL -->
+    <div class="imagen-producto">
+      <span class="emoji-hamburguesa">🍔</span>
+    </div>
+
+    <!-- INFORMACION -->
+    <div class="informacion">
+
+      <p class="categoria">COMIDA · POPULAR</p>
+
+      <h1>Hamburguesa clásica</h1>
+
+      <h2 class="precio">$45.00</h2>
+
+      <p class="descripcion">
+        Carne, queso, lechuga y tomate.
+        Preparada al momento para tu descanso.
+      </p>
+
+      <!-- AVISO AGOTADO -->
+      <div class="aviso">
+        <ion-icon name="alert-circle-outline"></ion-icon>
+        <p>
+          <strong>Agotado por ahora</strong> ·
+          No hay unidades para agregar.
+          Puedes elegir otra opción del menú.
+        </p>
+      </div>
+
+      <!-- CANTIDAD -->
+      <div class="cantidad">
+        <span>Cantidad</span>
+
+        <div class="contador">
+          <button type="button" (click)="restar()">−</button>
+          <span>{{ cantidad }}</span>
+          <button type="button" (click)="sumar()">+</button>
+        </div>
+      </div>
+
+      <!-- BOTON AGOTADO -->
+      <button class="boton-agotado" disabled>
+        Agregar al carrito · Agotado
+      </button>
+
+      <!-- OTRAS OPCIONES -->
+      <h3>Otras opciones del menú</h3>
+
+      <div class="opcion">
+        <div class="mini-imagen">🌮</div>
+
+        <div class="datos-opcion">
+          <strong>Tacos</strong>
+          <p>Disponible · Estado de ejemplo</p>
+          <span>$35.00</span>
+        </div>
+
+        <button
+          type="button"
+          class="boton-mas"
+          (click)="agregar('Tacos')">
+          +
+        </button>
+      </div>
+
+      <div class="opcion">
+        <div class="mini-imagen">🍔</div>
+
+        <div class="datos-opcion">
+          <strong>Hamburguesa gourmet</strong>
+          <p>Disponible · Estado de ejemplo</p>
+          <span>$80.00</span>
+        </div>
+
+        <button
+          type="button"
+          class="boton-mas"
+          (click)="agregar('Hamburguesa gourmet')">
+          +
+        </button>
+      </div>
+
+      <p class="nota">
+        Stock ilustrativo. Consulta ingredientes
+        y alergias con la cafetería antes de pedir.
+      </p>
+
+      <!-- VOLVER -->
+      <button
+        type="button"
+        class="boton-volver"
+        (click)="volver()">
+        Volver al menú
+      </button>
+
+    </div>
+  </div>
+
+</ion-content>
+
+
