@@ -1,0 +1,105 @@
+:host {
+  --crema: #fff7e6;
+  --crema-oscuro: #fdebd0;
+  --rojo: #b3222e;
+  --rojo-btn: #ee3b47;
+  --texto: #3a2a1c;
+  --texto-suave: #7a6a5a;
+}
+
+ion-header ion-toolbar {
+  --background: var(--crema);
+  --color: var(--texto);
+  ion-title { font-weight: 700; font-size: 22px; padding-inline-start: 4px; }
+  ion-button, ion-menu-button { --color: var(--rojo); }
+}
+
+ion-content {
+  --background: var(--crema);
+  --padding-top: 8px;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--texto);
+}
+
+.rol { color: var(--texto-suave); font-size: 15px; margin: 8px 0 16px; }
+
+/* Contadores */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+
+  .stat {
+    background: #fff;
+    border-radius: 18px;
+    padding: 14px 8px;
+    text-align: center;
+    strong { display: block; font-size: 32px; font-weight: 400; color: var(--rojo); line-height: 1.1; }
+    span { font-size: 13px; color: var(--texto-suave); }
+  }
+}
+
+/* Aviso */
+.aviso {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: var(--crema-oscuro);
+  border-radius: 16px;
+  padding: 14px;
+  margin-bottom: 16px;
+  ion-icon { color: var(--rojo); font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+  p { margin: 0; font-size: 15px; line-height: 1.5; }
+}
+
+ion-card { margin: 0 0 16px; box-shadow: none; border-radius: 20px; }
+
+/* Pedido */
+.pedido {
+  background: #fff;
+  border: 1px solid #f1e3cc;
+
+  .folio { margin: 0 0 12px; color: var(--rojo); font-size: 34px; font-weight: 800; letter-spacing: 0.5px; }
+  .cliente { margin: 0 0 6px; font-size: 22px; font-weight: 700; color: var(--texto); }
+  .ubicacion { margin: 0 0 14px; color: var(--texto-suave); font-size: 15px; }
+  .linea {
+    display: flex; justify-content: space-between; font-size: 16px; margin-bottom: 8px;
+    strong { font-weight: 700; }
+  }
+  .estado { font-size: 14px; line-height: 1.5; margin: 14px 0 16px; color: var(--texto); }
+  .acciones {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    ion-button { margin: 0; height: 52px; font-weight: 700; text-transform: none; --box-shadow: none; }
+  }
+}
+
+/* Efectivo */
+.efectivo {
+  background: var(--crema-oscuro);
+  border: 1px solid #f1e3cc;
+
+  .titulo-efectivo { margin: 0 0 12px; color: var(--rojo); font-size: 18px; font-weight: 400; letter-spacing: 0.3px; }
+  .importe {
+    display: flex; justify-content: space-between; align-items: baseline; font-size: 16px;
+    margin-bottom: 14px;
+    span { font-weight: 700; font-size: 20px; }
+    strong { color: var(--rojo); font-size: 30px; font-weight: 800; }
+    &.cambio { margin: 14px 0; span { font-weight: 400; font-size: 16px; } strong { color: var(--texto); font-size: 18px; } }
+  }
+  .etiqueta { display: block; font-weight: 700; font-size: 15px; margin-bottom: 8px; }
+  .campo {
+    --background: #fff;
+    --padding-start: 18px;
+    --placeholder-opacity: 0.6;
+    border-radius: 14px;
+    border: 1px solid #ecd9bd;
+    min-height: 54px;
+  }
+  ion-button { margin: 0; height: 54px; font-weight: 700; text-transform: none; --box-shadow: none; }
+  .nota { font-size: 13px; color: var(--texto-suave); line-height: 1.5; margin: 14px 0 0; }
+}
+
+// Color primario del botón (coincide con el diseño)
+ion-button[color='danger'] { --ion-color-base: var(--rojo-btn); --ion-color-contrast: #fff; }
+ion-button[fill='outline'][color='danger'] { --color: var(--rojo); --border-color: #ecd9bd; --background: #fff; }

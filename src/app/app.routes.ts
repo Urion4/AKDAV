@@ -45,6 +45,10 @@ export const routes: Routes = [
   {
     path: 'seguir',
     loadComponent: () => import('./pages/seguir/seguir.page').then( m => m.SeguirPage)
+  },  {
+    path: 'cocina',
+    loadComponent: () => import('./pages/cocina/cocina.page').then( m => m.CocinaPage)
   },
+
 
 ];

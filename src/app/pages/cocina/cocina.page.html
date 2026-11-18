@@ -1,0 +1,110 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Cocina</ion-title>
+    <ion-buttons slot="end">
+      <ion-button aria-label="Carrito">
+        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <p class="rol">Rol cocina · Desayuno 07:00–11:00</p>
+
+  <!-- Contadores -->
+  <div class="stats">
+    <div class="stat">
+      <strong>{{ preparando }}</strong>
+      <span>Preparando</span>
+    </div>
+    <div class="stat">
+      <strong>{{ listos }}</strong>
+      <span>Listos</span>
+    </div>
+    <div class="stat">
+      <strong>{{ enCamino }}</strong>
+      <span>En camino</span>
+    </div>
+  </div>
+
+  <!-- Aviso -->
+  <div class="aviso">
+    <ion-icon name="information-circle-outline"></ion-icon>
+    <p>Cola de ejemplo · Ordenar por franja escolar y hora de recepción. Consultar calendario antes de aceptar.</p>
+  </div>
+
+  <!-- Pedido -->
+  <ion-card class="pedido">
+    <ion-card-content>
+      <h1 class="folio">{{ pedido.folio }}</h1>
+      <h2 class="cliente">{{ pedido.cliente }}</h2>
+      <p class="ubicacion">{{ pedido.ubicacion }}</p>
+
+      <div class="linea" *ngFor="let item of pedido.items">
+        <span>{{ item.cantidad }} × {{ item.nombre }}</span>
+        <strong>{{ item.precio | currency:'MXN':'symbol-narrow':'1.2-2' }}</strong>
+      </div>
+
+      <p class="estado">
+        {{ pedido.estado }} · Recibido {{ pedido.recibido }}<br />
+        Salida estimada {{ pedido.salida }} · Ejemplo
+      </p>
+
+      <div class="acciones">
+        <ion-button expand="block" shape="round" color="danger" (click)="marcarListo()">
+          Marcar listo
+        </ion-button>
+        <ion-button expand="block" shape="round" fill="outline" color="danger" (click)="enCaminoClick()">
+          En camino
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Efectivo -->
+  <ion-card class="efectivo">
+    <ion-card-content>
+      <h3 class="titulo-efectivo">EFECTIVO PENDIENTE</h3>
+
+      <div class="importe">
+        <span>Importe a cobrar</span>
+        <strong>{{ total | currency:'MXN':'symbol-narrow':'1.2-2' }}</strong>
+      </div>
+
+      <label class="etiqueta" for="recibido">Efectivo recibido (al cobrar)</label>
+      <ion-input
+        id="recibido"
+        class="campo"
+        type="number"
+        inputmode="decimal"
+        [(ngModel)]="efectivoRecibido"
+        [placeholder]="'$100.00 · previsto, no recibido'"
+      ></ion-input>
+
+      <div class="importe cambio">
+        <span>Cambio a devolver</span>
+        <strong>{{ cambio | currency:'MXN':'symbol-narrow':'1.2-2' }}</strong>
+      </div>
+
+      <ion-button
+        expand="block"
+        shape="round"
+        color="danger"
+        [disabled]="!puedeRegistrar"
+        (click)="registrarEfectivo()"
+      >
+        Registrar efectivo recibido
+      </ion-button>
+
+      <p class="nota">
+        Confirmar solo cuando recibas {{ efectivoPrevisto | currency:'MXN':'symbol-narrow':'1.0-0' }}
+        y devuelvas {{ efectivoPrevisto - total | currency:'MXN':'symbol-narrow':'1.0-0' }}.
+        Después: pago recibido, saldo $0.
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
