@@ -1,0 +1,373 @@
+
+/* =================================
+   PALETA DE COLORES
+================================= */
+
+:host {
+  --color-fondo: #FFF9E8;
+  --color-beige: #FFEFD4;
+  --color-blanco: #FFFFFF;
+  --color-rojo: #BA2634;
+  --color-rojo-hover: #A4212E;
+  --color-cafe: #46342F;
+  --color-secundario: #88766D;
+  --color-borde: #F0E5D6;
+  --color-verde: #E7F4EB;
+  --color-verde-texto: #47785A;
+}
+
+/* =================================
+   FONDO GENERAL
+================================= */
+
+.order-content {
+  --background: var(--color-fondo);
+}
+
+.order-container {
+  width: 100%;
+  max-width: 500px;
+  min-height: 100%;
+  margin: auto;
+  padding-bottom: 25px;
+  background: var(--color-fondo);
+  font-family: Arial, sans-serif;
+}
+
+/* =================================
+   ENCABEZADO
+================================= */
+
+.top-label {
+  background: var(--color-beige);
+  color: var(--color-rojo);
+  font-size: 10px;
+  font-weight: bold;
+  padding: 7px 16px;
+}
+
+/* =================================
+   BARRA DE ESTADO
+================================= */
+
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 16px;
+  font-size: 11px;
+  font-weight: bold;
+  color: var(--color-cafe);
+}
+
+/* =================================
+   NAVEGACIÓN
+================================= */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  gap: 12px;
+
+  h2 {
+    flex: 1;
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--color-cafe);
+  }
+
+  ion-icon {
+    font-size: 21px;
+    color: var(--color-rojo);
+  }
+}
+
+.menu-button,
+.cart-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+/* =================================
+   CONFIRMACIÓN DEL PEDIDO
+================================= */
+
+.confirmation {
+  text-align: center;
+  padding: 13px 15px 12px;
+
+  h1 {
+    font-size: 19px;
+    font-weight: bold;
+    color: var(--color-cafe);
+    margin: 12px 0 7px;
+  }
+
+  p {
+    font-size: 11px;
+    color: var(--color-secundario);
+    margin: 0;
+  }
+}
+
+.success-icon {
+  width: 43px;
+  height: 43px;
+  border: 1px solid #8FB99B;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ion-icon {
+    font-size: 22px;
+    color: #7DAA89;
+  }
+}
+
+/* =================================
+   TARJETA DEL PEDIDO
+================================= */
+
+.order-card {
+  background: var(--color-blanco);
+  border: 1px solid var(--color-borde);
+  border-radius: 17px;
+  margin: 0 15px;
+  padding: 12px 10px;
+}
+
+/* Número de pedido */
+
+.order-number {
+  text-align: center;
+  padding: 0 0 9px;
+
+  span {
+    display: block;
+    font-size: 9px;
+    font-weight: bold;
+    color: var(--color-secundario);
+    margin-bottom: 5px;
+  }
+
+  h2 {
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--color-rojo);
+    margin: 0;
+    letter-spacing: 0.5px;
+  }
+}
+
+/* =================================
+   ESTADO DEL PEDIDO
+================================= */
+
+.order-status {
+  background: var(--color-verde);
+  color: var(--color-verde-texto);
+  border-radius: 7px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  font-size: 9px;
+  font-weight: bold;
+
+  ion-icon {
+    font-size: 12px;
+  }
+}
+
+/* =================================
+   SEPARADORES
+================================= */
+
+.card-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--color-borde);
+  margin: 9px 0;
+}
+
+/* =================================
+   PRODUCTOS
+================================= */
+
+.order-products {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.order-product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+
+  span {
+    font-size: 10px;
+    color: var(--color-cafe);
+  }
+
+  strong {
+    font-size: 10px;
+    color: var(--color-cafe);
+    white-space: nowrap;
+  }
+}
+
+/* =================================
+   TOTAL
+================================= */
+
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--color-cafe);
+  }
+
+  strong {
+    font-size: 19px;
+    font-weight: bold;
+    color: var(--color-rojo);
+  }
+}
+
+/* =================================
+   INFORMACIÓN DE ENTREGA
+================================= */
+
+.delivery-info {
+  margin-top: 9px;
+
+  strong {
+    display: block;
+    font-size: 9px;
+    color: var(--color-cafe);
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 9px;
+    line-height: 1.4;
+    color: var(--color-secundario);
+    margin: 4px 0 0;
+  }
+}
+
+/* =================================
+   AVISO DE PAGO
+================================= */
+
+.payment-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 12px 15px;
+  padding: 11px 10px;
+  background: #FFF0D8;
+  border-radius: 12px;
+
+  ion-icon {
+    font-size: 15px;
+    color: #C78A45;
+    flex-shrink: 0;
+  }
+
+  strong {
+    font-size: 9px;
+    color: #76512D;
+  }
+
+  p {
+    font-size: 9px;
+    line-height: 1.5;
+    color: #76512D;
+    margin: 4px 0 0;
+  }
+}
+
+/* =================================
+   BOTÓN SEGUIMIENTO
+================================= */
+
+.tracking-button {
+  width: calc(100% - 30px);
+  margin: 0 15px 10px;
+  height: 42px;
+  border-radius: 25px;
+  border: none;
+  background: var(--color-rojo);
+  color: var(--color-blanco);
+  font-size: 12px;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  ion-icon {
+    font-size: 15px;
+    color: white;
+  }
+
+  &:active {
+    background: var(--color-rojo-hover);
+  }
+}
+
+/* =================================
+   BOTÓN VOLVER AL INICIO
+================================= */
+
+.home-button {
+  width: calc(100% - 30px);
+  height: 42px;
+  margin: 0 15px;
+  border: 1px solid var(--color-borde);
+  border-radius: 25px;
+  background: var(--color-blanco);
+  color: var(--color-rojo);
+  font-size: 12px;
+  font-weight: bold;
+
+  &:active {
+    background: var(--color-beige);
+  }
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 360px) {
+
+  .confirmation h1 {
+    font-size: 17px;
+  }
+
+  .order-number h2 {
+    font-size: 23px;
+  }
+
+  .order-card {
+    padding: 10px;
+  }
+
+}

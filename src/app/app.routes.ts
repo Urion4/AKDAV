@@ -33,5 +33,9 @@ export const routes: Routes = [
     path: 'carrito',
     loadComponent: () => import('./pages/carrito/carrito.page').then( m => m.CarritoPage)
   },
+  {
+    path: 'tupedido',
+    loadComponent: () => import('./pages/tupedido/tupedido.page').then( m => m.TupedidoPage)
+  },
 
 ];

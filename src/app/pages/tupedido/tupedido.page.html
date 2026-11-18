@@ -1,0 +1,149 @@
+
+<ion-content [fullscreen]="true" class="order-content">
+
+  <div class="order-container">
+
+    <!-- Encabezado -->
+    <div class="top-label">
+      PEDIDO / NÚMERO DE ENTREGA
+    </div>
+
+
+    <!-- Navegación -->
+    <div class="navbar">
+
+      <button class="menu-button" (click)="abrirMenu()">
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <h2>Tu pedido</h2>
+
+      <button class="cart-icon" (click)="irAlCarrito()">
+        <ion-icon name="cart-outline"></ion-icon>
+      </button>
+
+    </div>
+
+    <!-- Confirmación -->
+    <div class="confirmation">
+
+      <div class="success-icon">
+        <ion-icon name="checkmark-outline"></ion-icon>
+      </div>
+
+      <h1>¡Pedido generado!</h1>
+
+      <p>
+        Conserva este número para recibir tu comida.
+      </p>
+
+    </div>
+
+    <!-- Tarjeta del pedido -->
+    <div class="order-card">
+
+      <div class="order-number">
+
+        <span>NÚMERO DE PEDIDO / ENTREGA</span>
+
+        <h2>{{ numeroPedido }}</h2>
+
+      </div>
+
+      <!-- Estado del pedido -->
+      <div class="order-status">
+        <ion-icon name="checkmark-circle-outline"></ion-icon>
+        Pedido recibido por cocina
+      </div>
+
+      <div class="card-divider"></div>
+
+      <!-- Productos -->
+      <div class="order-products">
+
+        <div class="order-product"
+             *ngFor="let producto of productos">
+
+          <span>
+            {{ producto.cantidad }} x {{ producto.nombre }}
+          </span>
+
+          <strong>
+            {{ producto.precio * producto.cantidad | currency:'MXN':'symbol':'1.2-2' }}
+          </strong>
+
+        </div>
+
+      </div>
+
+      <div class="card-divider"></div>
+
+      <!-- Total -->
+      <div class="order-total">
+
+        <span>Total</span>
+
+        <strong>
+          {{ total | currency:'MXN':'symbol':'1.2-2' }}
+        </strong>
+
+      </div>
+
+      <!-- Información de entrega -->
+      <div class="delivery-info">
+
+        <strong>{{ nombreCliente }} · {{ ubicacion }}</strong>
+
+        <p>
+          {{ tipoEntrega }} · Entrega estimada:
+          {{ horaEntrega }}
+        </p>
+
+        <p>
+          {{ direccionEntrega }}
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- Aviso de pago -->
+    <div class="payment-notice">
+
+      <ion-icon name="alert-circle-outline"></ion-icon>
+
+      <div>
+
+        <strong>EFECTIVO PENDIENTE</strong>
+
+        <p>
+          Total: {{ total | currency:'MXN':'symbol':'1.2-2' }}.
+          Pagarás con $100.00; cambio previsto $20.00.
+          Aún no se ha recibido el dinero.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- Botón seguimiento -->
+    <button class="tracking-button"
+            (click)="seguirPedido()">
+
+      Seguir mi pedido
+
+      <ion-icon name="arrow-forward-outline"></ion-icon>
+
+    </button>
+
+    <!-- Botón inicio -->
+    <button class="home-button"
+            (click)="volverInicio()">
+
+      Volver al inicio
+
+    </button>
+
+  </div>
+
+</ion-content>
