@@ -29,5 +29,21 @@ export const routes: Routes = [
   {
     path: 'mis-pedidos',
     loadComponent: () => import('./option/mis-pedidos/mis-pedidos.page').then( m => m.MisPedidosPage)
+  },  {
+    path: 'hola',
+    loadComponent: () => import('./login/hola/hola.page').then( m => m.HolaPage)
   },
+  {
+    path: 'hg',
+    loadComponent: () => import('./login/hg/hg.page').then( m => m.HgPage)
+  },
+  {
+    path: 'pedido',
+    loadComponent: () => import('./documentacion/pedido/pedido.page').then( m => m.PedidoPage)
+  },
+  {
+    path: 'seguir',
+    loadComponent: () => import('./pages/seguir/seguir.page').then( m => m.SeguirPage)
+  },
+
 ];

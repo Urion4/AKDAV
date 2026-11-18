@@ -1,0 +1,141 @@
+
+<ion-content [fullscreen]="true" class="tracking-content">
+
+  <div class="tracking-container">
+
+    <!-- Encabezado -->
+    <div class="header">
+      <ion-button fill="clear" class="back-button">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+
+      <h2>Seguir mi pedido</h2>
+
+      <ion-button fill="clear" class="cart-button">
+        <ion-icon name="cart-outline"></ion-icon>
+      </ion-button>
+    </div>
+
+    <!-- Título principal -->
+    <div class="main-title">
+      <h1>¡Ya va a tu salón!</h1>
+    </div>
+
+    <!-- Información del pedido -->
+    <ion-card class="order-card">
+      <ion-card-content>
+
+        <h2 class="order-number">AKD-00127</h2>
+
+        <div class="order-total">
+          <span>2 productos · Total</span>
+          <strong>$80.00</strong>
+        </div>
+
+        <p class="products">
+          1 Hamburguesa clásica $45 +
+          1 Tacos $35
+        </p>
+
+        <p class="delivery-person">
+          <strong>Andrea López</strong>
+          · Edificio B / Salón 204
+        </p>
+
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Entrega estimada -->
+    <div class="delivery-time">
+      <p>ENTREGA ESTIMADA</p>
+      <h2>10:40–10:50</h2>
+    </div>
+
+    <!-- Timeline -->
+    <div class="timeline">
+
+      <div class="timeline-item completed">
+        <div class="timeline-icon">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </div>
+
+        <div class="timeline-info">
+          <h3>Recibido</h3>
+          <p>10:24 · Pedido aceptado por cocina</p>
+        </div>
+      </div>
+
+      <div class="timeline-item completed">
+        <div class="timeline-icon">
+          <ion-icon name="restaurant-outline"></ion-icon>
+        </div>
+
+        <div class="timeline-info">
+          <h3>En preparación</h3>
+          <p>Preparación terminada</p>
+        </div>
+      </div>
+
+      <div class="timeline-item completed">
+        <div class="timeline-icon">
+          <ion-icon name="cube-outline"></ion-icon>
+        </div>
+
+        <div class="timeline-info">
+          <h3>Listo</h3>
+          <p>Alimentos listos para salir</p>
+        </div>
+      </div>
+
+      <div class="timeline-item active">
+        <div class="timeline-icon">
+          <ion-icon name="cube"></ion-icon>
+        </div>
+
+        <div class="timeline-info">
+          <h3>En camino · Ahora</h3>
+          <p>10:40 · Va a edificio B, salón 204</p>
+        </div>
+      </div>
+
+      <div class="timeline-item pending">
+        <div class="timeline-icon">
+          <ion-icon name="flag-outline"></ion-icon>
+        </div>
+
+        <div class="timeline-info">
+          <h3>Entregado</h3>
+          <p>Pendiente · Recibir alimentos y confirmar</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Pago -->
+    <div class="payment-alert">
+      <ion-icon name="information-circle-outline"></ion-icon>
+
+      <div>
+        <strong>EFECTIVO PENDIENTE · $80.00</strong>
+        <p>
+          Pagarás con $100.00, cambio previsto $20.00.
+          El personal aún no recibe el dinero.
+        </p>
+      </div>
+    </div>
+
+    <!-- Botón -->
+    <ion-button expand="block" class="orders-button">
+      Ver mis pedidos
+    </ion-button>
+
+    <!-- Nota -->
+    <div class="footer-note">
+      <p>Ejemplo de seguimiento · No es información en vivo.</p>
+      <strong>Muestra tu número al recibir.</strong>
+    </div>
+
+  </div>
+
+</ion-content>
+
