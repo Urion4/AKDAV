@@ -1,0 +1,133 @@
+<ion-content [fullscreen]="true" class="cart-content">
+
+  <div class="cart-container">
+
+    <!-- Encabezado -->
+    <div class="top-label">
+      PEDIR / REVISAR CARRITO
+    </div>
+
+    
+
+    <!-- Navegación -->
+    <div class="navbar">
+      <button class="back-button" (click)="volver()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </button>
+
+      <h2>Mi carrito</h2>
+
+      <button class="cart-icon">
+        <ion-icon name="cart-outline"></ion-icon>
+      </button>
+    </div>
+
+    <!-- Información -->
+    <div class="cart-info">
+      <p>{{ productos.length }} productos · Revisa antes de confirmar</p>
+    </div>
+
+    <!-- Productos -->
+    <div class="products-container">
+
+      <div class="product-card" *ngFor="let producto of productos">
+
+        <div class="product-image">
+          <img [src]="producto.imagen" [alt]="producto.nombre">
+        </div>
+
+        <div class="product-details">
+
+          <div class="product-header">
+            <div>
+              <h3>{{ producto.nombre }}</h3>
+              <p>
+                {{ producto.precio | currency:'MXN':'symbol':'1.2-2' }}
+                por unidad
+              </p>
+            </div>
+
+            <button class="delete-button"
+                    (click)="eliminarProducto(producto.id)">
+              <ion-icon name="trash-outline"></ion-icon>
+            </button>
+          </div>
+
+          <div class="product-bottom">
+
+            <div class="quantity-control">
+
+              <button (click)="disminuir(producto)">
+                <ion-icon name="remove-outline"></ion-icon>
+              </button>
+
+              <span>{{ producto.cantidad }}</span>
+
+              <button (click)="aumentar(producto)">
+                <ion-icon name="add-outline"></ion-icon>
+              </button>
+
+            </div>
+
+            <strong>
+              {{ producto.precio * producto.cantidad | currency:'MXN':'symbol':'1.2-2' }}
+            </strong>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Carrito vacío -->
+      <div class="empty-cart" *ngIf="productos.length === 0">
+        <ion-icon name="cart-outline"></ion-icon>
+        <h3>Tu carrito está vacío</h3>
+        <p>Agrega alimentos para comenzar tu pedido.</p>
+      </div>
+
+    </div>
+
+    <!-- Agregar alimentos -->
+    <button class="add-food" (click)="agregarAlimento()">
+      + Agregar más alimentos
+    </button>
+
+    <!-- Resumen -->
+    <div class="summary-card">
+
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <strong>
+          {{ subtotal | currency:'MXN':'symbol':'1.2-2' }}
+        </strong>
+      </div>
+
+      <div class="summary-row">
+        <span>Cargo de servicio</span>
+        <strong>
+          {{ cargoServicio | currency:'MXN':'symbol':'1.2-2' }}
+        </strong>
+      </div>
+
+      <div class="summary-total">
+        <span>Total</span>
+        <strong>
+          {{ total | currency:'MXN':'symbol':'1.2-2' }}
+        </strong>
+      </div>
+
+    </div>
+
+    <!-- Confirmar pedido -->
+    <button class="checkout-button"
+            [disabled]="productos.length === 0"
+            (click)="confirmarPedido()">
+
+      Confirmar pedido
+
+      <ion-icon name="arrow-forward-outline"></ion-icon>
+    </button>
+
+  </div>
+
+</ion-content>
