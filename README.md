@@ -105,9 +105,8 @@ AKDAV es un proyecto de desarrollo de software enfocado en la implementación de
 
 Este proyecto se encuentra en desarrollo. La licencia y condiciones de distribución se definirán posteriormente.\
 
-\---\
+---
 <p align="center">
 &#x20; **AKDAV – Tu comida favorita, sin largas filas.** 🍔
 </p>
 
-**Mi recomendación:** utiliza este README como presentación principal de tu repositorio. Cuando AKDAV tenga conectada la base de datos y el sistema de pedidos, podremos actualizarlo para documentar también cómo instalar, configurar y ejecutar la aplicación.
