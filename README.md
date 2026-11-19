@@ -1,7 +1,5 @@
-Te preparé un `README.md` para GitHub con una presentación profesional de AKDAV, incluyendo descripción, objetivos, funcionalidades, tecnologías y estructura del proyecto. Está redactado considerando que AKDAV es una aplicación en desarrollo.
-
-\# 🍽️ AKDAV\
-\### App de Kiosko, Desayunos y Alimentos Varios\
+# 🍽️ AKDAV
+### App de Kiosko, Desayunos y Alimentos Varios\
 \
 \*\*AKDAV\*\* es una aplicación móvil orientada a facilitar la consulta y solicitud de alimentos dentro de un entorno escolar, ofreciendo una alternativa digital para agilizar el servicio de cafetería y mejorar la experiencia de estudiantes y personal de la institución.\
 \
