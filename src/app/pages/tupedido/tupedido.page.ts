@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonImg, IonItem, IonLabel, IonList, IonTitle, IonToolbar } from '@ionic/angular';
+import { IonContent,IonIcon } from '@ionic/angular'; 
 
 @Component({
   selector: 'app-tupedido',
@@ -11,12 +11,7 @@ import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonImg, IonItem,
   styleUrls: ['./tupedido.page.scss'],
   standalone: true,
   imports: [
-    CommonModule,
-    IonButton, IonButtons, IonContent, 
-    IonHeader, IonIcon, IonImg, 
-    IonItem, IonLabel, IonList, IonTitle, 
-    IonToolbar 
-
+    CommonModule,IonContent,IonIcon
   ]
 })
 

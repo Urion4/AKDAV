@@ -66,7 +66,11 @@ export class HomePage implements OnInit {
       replaceUrl: true
     });
   }
-
+carrito(){
+        this.router.navigateByUrl('/carrito', {
+      replaceUrl: true
+    });
+  }
   ngOnInit() {
   }
 

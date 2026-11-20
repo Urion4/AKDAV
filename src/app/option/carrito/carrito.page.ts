@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {  AlertController } from '@ionic/angular';
-import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonImg, IonItem, IonLabel, IonList, IonTitle, IonToolbar } from '@ionic/angular';
+import { IonIcon,IonContent } from '@ionic/angular';
 
 interface Producto {
   id: number;
@@ -18,11 +18,7 @@ interface Producto {
   styleUrls: ['./carrito.page.scss'],
   standalone: true,
   imports: [
-    CommonModule,
-    IonButton, IonButtons, IonContent, 
-    IonHeader, IonIcon, IonImg, 
-    IonItem, IonLabel, IonList, IonTitle, 
-    IonToolbar 
+    CommonModule,IonContent,IonIcon 
   ]
 })
 
