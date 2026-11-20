@@ -71,6 +71,11 @@ carrito(){
       replaceUrl: true
     });
   }
+  perfil(){
+        this.router.navigateByUrl('/perfil', {
+      replaceUrl: true
+    });
+  }
   ngOnInit() {
   }
 

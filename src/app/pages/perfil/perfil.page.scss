@@ -1,0 +1,242 @@
+
+:host {
+  --color-fondo: #fff9eb;
+  --color-rojo: #f23948;
+  --color-texto: #493b37;
+  --color-borde: #efddc8;
+}
+
+.perfil-content {
+  --background: var(--color-fondo);
+  --color: var(--color-texto);
+}
+
+.pantalla-perfil {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100%;
+  margin: 0 auto;
+  background: var(--color-fondo);
+  padding-bottom: 25px;
+}
+
+/* Etiqueta superior */
+
+.etiqueta-superior {
+  height: 20px;
+  background: #fff0d5;
+  color: #b51e2d;
+  font-size: 8px;
+  font-weight: 700;
+  padding: 4px 15px;
+}
+
+/* Barra de estado */
+
+.barra-estado {
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  font-size: 11px;
+  color: #493b37;
+}
+
+.estado-iconos {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 15px;
+}
+
+/* Navegación */
+
+.navbar {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.navbar h1 {
+  margin: 0 0 0 4px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-texto);
+}
+
+.icono-menu,
+.icono-carrito {
+  --color: var(--color-rojo);
+  --padding-start: 5px;
+  --padding-end: 5px;
+  margin: 0;
+  font-size: 21px;
+}
+
+.icono-carrito {
+  margin-left: auto;
+}
+
+/* Usuario */
+
+.usuario {
+  text-align: center;
+  padding-top: 7px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ffe6e9;
+  margin: 0 auto 11px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar ion-icon {
+  font-size: 28px;
+  color: var(--color-rojo);
+  --ionicon-stroke-width: 22px;
+}
+
+.usuario h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-texto);
+}
+
+.usuario p {
+  font-size: 10px;
+  color: #8d7c75;
+  margin-top: 9px;
+  margin-bottom: 17px;
+}
+
+/* Formulario */
+
+.formulario {
+  padding: 0 15px;
+}
+
+.campo {
+  margin-bottom: 16px;
+}
+
+.campo label,
+.campo-destino label {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--color-texto);
+  margin-bottom: 6px;
+}
+
+.input-contenedor {
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid var(--color-borde);
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  padding: 0 11px;
+}
+
+.input-contenedor ion-input {
+  --color: #806f69;
+  --placeholder-color: #806f69;
+  --placeholder-opacity: 1;
+  font-size: 12px;
+  min-height: 38px;
+}
+
+/* Correo */
+
+.correo {
+  gap: 9px;
+}
+
+.correo ion-icon {
+  color: var(--color-rojo);
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+/* Tarjeta destino escolar */
+
+.tarjeta-destino {
+  background: #ffffff;
+  border: 1px solid var(--color-borde);
+  border-radius: 17px;
+  padding: 12px;
+  margin-top: 2px;
+  margin-bottom: 17px;
+}
+
+.tarjeta-destino h3 {
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: var(--color-texto);
+}
+
+.fila-destino {
+  display: flex;
+  gap: 10px;
+}
+
+.campo-destino {
+  flex: 1;
+  min-width: 0;
+}
+
+.campo-destino .input-contenedor {
+  border-radius: 11px;
+}
+
+.tarjeta-destino p {
+  font-size: 10px;
+  color: #8d7c75;
+  margin: 10px 0 0;
+}
+
+/* Botón guardar */
+
+.btn-guardar {
+  --background: #f23948;
+  --background-hover: #e32d3e;
+  --background-activated: #d82939;
+  --color: white;
+  --border-radius: 25px;
+  --box-shadow: none;
+
+  height: 40px;
+  margin: 0 0 16px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: none;
+}
+
+/* Botón contraseña */
+
+.btn-password {
+  --background: white;
+  --color: #cc2031;
+  --border-color: var(--color-borde);
+  --border-width: 1px;
+  --border-style: solid;
+  --border-radius: 25px;
+  --box-shadow: none;
+
+  height: 40px;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: none;
+}

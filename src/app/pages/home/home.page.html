@@ -112,6 +112,7 @@
       <ion-menu-toggle>
         <ion-item
           button
+          (click)="perfil()"
           class="menu-item">
 
           <ion-icon
@@ -203,7 +204,7 @@
       <!-- CARRITO -->
       <ion-buttons slot="end">
 
-        <ion-button>
+        <ion-button (click)="carrito()">
           <ion-icon
             slot="icon-only"
             name="cart-outline">
