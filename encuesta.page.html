@@ -1,0 +1,102 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="transparent">
+    <ion-buttons slot="start">
+      <ion-button (click)="router.back()">
+        <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Tu opinión cuenta</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="cart-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" [fullscreen]="true">
+  <!-- Tarjeta de información -->
+  <div class="info-card">
+    <ion-icon name="checkmark-circle-outline" color="success" size="large"></ion-icon>
+    <ion-text>
+      <p>Ejemplo posterior a la entrega · AKD-00127 entregado y efectivo recibido.</p>
+    </ion-text>
+  </div>
+
+  <h2 class="titulo">¿Fue rápido y fácil?</h2>
+  <p class="subtitulo">Toma menos de un minuto. Tu opinión nos ayudará a mejorar; no mostramos resultados inventados.</p>
+
+  <form [formGroup]="encuestaForm" (ngSubmit)="enviarOpinion()">
+    <!-- Pregunta 1: Facilidad -->
+    <ion-label class="pregunta-label">¿Qué tan fácil fue hacer tu pedido?</ion-label>
+    <ion-grid class="ion-no-padding">
+      <ion-row>
+        <ion-col size="4" *ngFor="let opcion of opcionesFacilidad">
+          <ion-button 
+            expand="block" 
+            fill="outline" 
+            class="opcion-btn"
+            [class.selected]="encuestaForm.get('facilidad')?.value === opcion"
+            (click)="seleccionar('facilidad', opcion)"
+            type="button">
+            {{ opcion }}
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- Pregunta 2: Velocidad -->
+    <ion-label class="pregunta-label">¿Cómo sentiste la velocidad de entrega?</ion-label>
+    <ion-grid class="ion-no-padding">
+      <ion-row>
+        <ion-col size="4" *ngFor="let opcion of opcionesVelocidad">
+          <ion-button 
+            expand="block" 
+            fill="outline" 
+            class="opcion-btn"
+            [class.selected]="encuestaForm.get('velocidad')?.value === opcion"
+            (click)="seleccionar('velocidad', opcion)"
+            type="button">
+            {{ opcion }}
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- Pregunta 3: Satisfacción (Números) -->
+    <ion-label class="pregunta-label">¿Qué tan satisfecho estás?</ion-label>
+    <ion-grid class="ion-no-padding">
+      <ion-row>
+        <ion-col size="2.4" *ngFor="let num of opcionesSatisfaccion">
+          <ion-button 
+            expand="block" 
+            fill="outline" 
+            class="opcion-btn"
+            [class.selected]="encuestaForm.get('satisfaccion')?.value === num"
+            (click)="seleccionar('satisfaccion', num)"
+            type="button">
+            {{ num }}
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- Mejoras (Texto libre) -->
+    <ion-label class="pregunta-label">¿Qué podríamos mejorar? (opcional)</ion-label>
+    <ion-item lines="none" class="textarea-item">
+      <ion-textarea formControlName="mejora" placeholder="Escribe sin incluir datos personales" rows="3"></ion-textarea>
+    </ion-item>
+
+    <ion-note class="aviso">
+      Participación voluntaria. El análisis se hará de forma anonimizada; no cambia tu servicio ni tu pedido.
+    </ion-note>
+
+    <!-- Botones de Acción -->
+    <ion-button expand="block" type="submit" class="btn-enviar" [disabled]="encuestaForm.invalid">
+      Enviar opinión
+    </ion-button>
+    <ion-button expand="block" fill="clear" class="btn-omitir" (click)="omitir()" type="button">
+      Omitir y volver al inicio
+    </ion-button>
+  </form>
+</ion-content>

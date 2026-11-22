@@ -1,0 +1,89 @@
+ion-content {
+  --background: #fef9e7; // Color crema de fondo
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+  background: #e8f5e9;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 20px;
+  gap: 10px;
+
+  ion-text p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #2e7d32;
+  }
+}
+
+.titulo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.subtitulo {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.pregunta-label {
+  display: block;
+  font-weight: 600;
+  color: #444;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.opcion-btn {
+  --border-radius: 10px;
+  --border-color: #ddd;
+  --color: #333;
+  --background: #fff;
+  margin: 0;
+  height: 45px;
+  font-size: 0.85rem;
+
+  &.selected {
+    --background: #fce4ec;
+    --color: #c62828;
+    --border-color: #c62828;
+  }
+}
+
+.textarea-item {
+  --background: #fff;
+  --border-radius: 10px;
+  --padding-start: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.aviso {
+  display: block;
+  font-size: 0.75rem;
+  color: #888;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.btn-enviar {
+  --background: #d32f2f;
+  --border-radius: 25px;
+  --color: #fff;
+  font-weight: 600;
+  height: 50px;
+  margin-top: 10px;
+}
+
+.btn-omitir {
+  --color: #d32f2f;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
