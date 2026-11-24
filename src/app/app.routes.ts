@@ -37,5 +37,9 @@ export const routes: Routes = [
     path: 'tupedido',
     loadComponent: () => import('./pages/tupedido/tupedido.page').then( m => m.TupedidoPage)
   },
+  {
+    path: 'entrega',
+    loadComponent: () => import('./pages/entrega/entrega.page').then( m => m.EntregaPage)
+  },
 
 ];
