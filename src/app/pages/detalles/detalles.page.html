@@ -1,120 +1,164 @@
 
-
 <ion-content [fullscreen]="true">
 
   <div class="pagina">
 
     <!-- ENCABEZADO -->
     <div class="encabezado">
+
       <div class="regresar" (click)="volver()">
         <ion-icon name="arrow-back-outline"></ion-icon>
-        <span>Detalles</span>
+        <span>Editar producto</span>
       </div>
 
       <ion-icon
         name="cart-outline"
         class="icono-carrito">
       </ion-icon>
+
     </div>
 
-    <!-- IMAGEN PRINCIPAL -->
+    <p class="subtitulo">
+      Rol administrador · Producto existente ·
+      Cambios sin guardar
+    </p>
+
+    <!-- IMAGEN -->
     <div class="imagen-producto">
       <span class="emoji-hamburguesa">🍔</span>
     </div>
 
-    <!-- INFORMACION -->
-    <div class="informacion">
+    <p class="pie-imagen">
+      Ilustración del catálogo conservada
+    </p>
 
-      <p class="categoria">COMIDA · POPULAR</p>
+    <!-- NOMBRE -->
+    <div class="campo">
+      <label>Nombre del producto</label>
 
-      <h1>Hamburguesa clásica</h1>
+      <input
+        type="text"
+        [(ngModel)]="nombre"
+        placeholder="Nombre del producto">
 
-      <h2 class="precio">$45.00</h2>
-
-      <p class="descripcion">
-        Carne, queso, lechuga y tomate.
-        Preparada al momento para tu descanso.
+      <p class="ayuda">
+        Obligatorio · Conserva la identidad del producto.
       </p>
+    </div>
 
-      <!-- AVISO AGOTADO -->
-      <div class="aviso">
-        <ion-icon name="alert-circle-outline"></ion-icon>
-        <p>
-          <strong>Agotado por ahora</strong> ·
-          No hay unidades para agregar.
-          Puedes elegir otra opción del menú.
-        </p>
+    <!-- PRECIO Y CATEGORIA -->
+    <div class="fila-campos">
+
+      <div class="campo">
+        <label>Precio ($)</label>
+
+        <input
+          type="number"
+          min="0"
+          step="0.01"
+          [(ngModel)]="precio">
       </div>
 
-      <!-- CANTIDAD -->
-      <div class="cantidad">
-        <span>Cantidad</span>
+      <div class="campo">
+        <label>Categoría</label>
 
-        <div class="contador">
-          <button type="button" (click)="restar()">−</button>
-          <span>{{ cantidad }}</span>
-          <button type="button" (click)="sumar()">+</button>
-        </div>
+        <select [(ngModel)]="categoria">
+          <option value="Comida">Comida</option>
+          <option value="Bebidas">Bebidas</option>
+          <option value="Postres">Postres</option>
+          <option value="Snacks">Snacks</option>
+        </select>
       </div>
-
-      <!-- BOTON AGOTADO -->
-      <button class="boton-agotado" disabled>
-        Agregar al carrito · Agotado
-      </button>
-
-      <!-- OTRAS OPCIONES -->
-      <h3>Otras opciones del menú</h3>
-
-      <div class="opcion">
-        <div class="mini-imagen">🌮</div>
-
-        <div class="datos-opcion">
-          <strong>Tacos</strong>
-          <p>Disponible · Estado de ejemplo</p>
-          <span>$35.00</span>
-        </div>
-
-        <button
-          type="button"
-          class="boton-mas"
-          (click)="agregar('Tacos')">
-          +
-        </button>
-      </div>
-
-      <div class="opcion">
-        <div class="mini-imagen">🍔</div>
-
-        <div class="datos-opcion">
-          <strong>Hamburguesa gourmet</strong>
-          <p>Disponible · Estado de ejemplo</p>
-          <span>$80.00</span>
-        </div>
-
-        <button
-          type="button"
-          class="boton-mas"
-          (click)="agregar('Hamburguesa gourmet')">
-          +
-        </button>
-      </div>
-
-      <p class="nota">
-        Stock ilustrativo. Consulta ingredientes
-        y alergias con la cafetería antes de pedir.
-      </p>
-
-      <!-- VOLVER -->
-      <button
-        type="button"
-        class="boton-volver"
-        (click)="volver()">
-        Volver al menú
-      </button>
 
     </div>
+
+    <p class="ayuda moneda">
+      Moneda por confirmar.
+    </p>
+
+    <!-- DESCRIPCION -->
+    <div class="campo descripcion-campo">
+
+      <label>Descripción</label>
+
+      <textarea
+        [(ngModel)]="descripcion"
+        rows="3">
+      </textarea>
+
+      <p class="ayuda">
+        Consulta y valida ingredientes con la cafetería.
+      </p>
+
+    </div>
+
+    <!-- STOCK -->
+    <div class="stock-card">
+
+      <h3>Stock y disponibilidad</h3>
+
+      <p class="stock-subtitulo">
+        Unidades en stock · Demo
+      </p>
+
+      <input
+        type="number"
+        [(ngModel)]="stock"
+        [class.input-error]="stock < 0"
+        min="0">
+
+      <p class="error" *ngIf="stock < 0">
+        Usa un número entero igual o mayor que 0.
+      </p>
+
+      <div class="disponibilidad">
+
+        <div class="texto-disponibilidad">
+          <strong>No disponible</strong>
+          <p>Activa al reponer stock válido.</p>
+        </div>
+
+        <ion-toggle
+          [(ngModel)]="noDisponible"
+          color="warning">
+        </ion-toggle>
+
+      </div>
+
+    </div>
+
+    <!-- AVISO -->
+    <div class="aviso">
+      <ion-icon name="alert-circle-outline"></ion-icon>
+
+      <p>
+        Corrige el stock para guardar.
+        El valor publicado sigue en 0 unidades
+        y el producto permanece agotado.
+      </p>
+    </div>
+
+    <!-- BOTONES -->
+    <button
+      class="boton-guardar"
+      [disabled]="!formularioValido()"
+      (click)="guardar()">
+      Guardar cambios
+    </button>
+
+    <button
+      class="boton-cancelar"
+      (click)="volver()">
+      Cancelar y volver al menú
+    </button>
+
+    <!-- NOTA FINAL -->
+    <p class="nota-final">
+      Nombre y categoría obligatorios; precio &gt; 0,
+      stock entero ≥ 0. Los cambios no alteran
+      precios de pedidos ya confirmados.
+    </p>
+
   </div>
 
 </ion-content>
-
-

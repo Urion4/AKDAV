@@ -1,0 +1,204 @@
+<ion-content [fullscreen]="true">
+
+  <div class="pagina">
+
+    <!-- ENCABEZADO -->
+    <div class="encabezado">
+
+      <div class="regresar" (click)="volver()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+        <span>Editar producto</span>
+      </div>
+
+      <ion-icon
+        name="cart-outline"
+        class="icono-carrito">
+      </ion-icon>
+
+    </div>
+
+    <!-- SUBTITULO -->
+    <p class="subtitulo">
+      Rol administrador · Producto existente ·
+      Cambios sin guardar
+    </p>
+
+    <!-- IMAGEN -->
+    <div class="imagen-producto">
+      <span class="emoji-hamburguesa">🍔</span>
+    </div>
+
+    <p class="pie-imagen">
+      Ilustración del catálogo conservada
+    </p>
+
+    <!-- NOMBRE DEL PRODUCTO -->
+    <div class="campo">
+
+      <label for="nombre">
+        Nombre del producto
+      </label>
+
+      <input
+        id="nombre"
+        type="text"
+        [(ngModel)]="nombre"
+        placeholder="Nombre del producto">
+
+      <p class="ayuda">
+        Obligatorio · Conserva la identidad del producto.
+      </p>
+
+    </div>
+
+    <!-- PRECIO Y CATEGORIA -->
+    <div class="fila-campos">
+
+      <div class="campo">
+
+        <label for="precio">Precio ($)</label>
+
+        <input
+          id="precio"
+          type="number"
+          min="0"
+          step="0.01"
+          [(ngModel)]="precio">
+
+      </div>
+
+      <div class="campo">
+
+        <label for="categoria">Categoría</label>
+
+        <select
+          id="categoria"
+          [(ngModel)]="categoria">
+
+          <option value="Comida">Comida</option>
+          <option value="Bebidas">Bebidas</option>
+          <option value="Postres">Postres</option>
+          <option value="Snacks">Snacks</option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+    <p class="ayuda moneda">
+      Moneda por confirmar.
+    </p>
+
+    <!-- DESCRIPCION -->
+    <div class="campo descripcion-campo">
+
+      <label for="descripcion">Descripción</label>
+
+      <textarea
+        id="descripcion"
+        [(ngModel)]="descripcion"
+        rows="3">
+      </textarea>
+
+      <p class="ayuda">
+        Consulta y valida ingredientes con la cafetería.
+      </p>
+
+    </div>
+
+    <!-- STOCK -->
+    <div class="stock-card">
+
+      <h3>Stock y disponibilidad</h3>
+
+      <p class="stock-subtitulo">
+        Unidades en stock · Demo
+      </p>
+
+      <input
+        type="number"
+        [(ngModel)]="stock"
+        [class.input-error]="stock < 0 || !Number.isInteger(stock)"
+        min="0"
+        step="1">
+
+      <!-- ERROR -->
+      <p
+        class="error"
+        *ngIf="stock < 0 || !Number.isInteger(stock)">
+
+        Usa un número entero igual o mayor que 0.
+
+      </p>
+
+      <!-- DISPONIBILIDAD -->
+      <div class="disponibilidad">
+
+        <div class="texto-disponibilidad">
+
+          <strong>No disponible</strong>
+
+          <p>
+            Activa al reponer stock válido.
+          </p>
+
+        </div>
+
+        <ion-toggle
+          [(ngModel)]="noDisponible"
+          color="warning">
+        </ion-toggle>
+
+      </div>
+
+    </div>
+
+    <!-- AVISO -->
+    <div
+      class="aviso"
+      *ngIf="stock < 0 || !Number.isInteger(stock)">
+
+      <ion-icon name="alert-circle-outline"></ion-icon>
+
+      <p>
+        Corrige el stock para guardar.
+        El valor publicado sigue en 0 unidades
+        y el producto permanece agotado.
+      </p>
+
+    </div>
+
+    <!-- GUARDAR -->
+    <button
+      type="button"
+      class="boton-guardar"
+      [disabled]="!formularioValido()"
+      (click)="guardar()">
+
+      Guardar cambios
+
+    </button>
+
+    <!-- CANCELAR -->
+    <button
+      type="button"
+      class="boton-cancelar"
+      (click)="volver()">
+
+      Cancelar y volver al menú
+
+    </button>
+
+    <!-- NOTA -->
+    <p class="nota-final">
+      Nombre y categoría obligatorios;
+      precio mayor que 0, stock entero
+      igual o mayor que 0.
+      Los cambios no alteran precios
+      de pedidos ya confirmados.
+    </p>
+
+  </div>
+
+</ion-content>
