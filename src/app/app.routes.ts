@@ -42,4 +42,12 @@ export const routes: Routes = [
     path: 'perfil',
     loadComponent: () => import('./pages/perfil/perfil.page').then( m => m.PerfilPage)
   },
+  {
+    path: 'detalles',
+    loadComponent: () => import('./option/detalles/detalles.page').then( m => m.DetallesPage)
+  },
+  {
+    path: 'editarp',
+    loadComponent: () => import('./option/editarp/editarp.page').then( m => m.EditarpPage)
+  },
 ];
